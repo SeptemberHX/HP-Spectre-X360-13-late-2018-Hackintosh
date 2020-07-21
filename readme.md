@@ -10,7 +10,7 @@
 * Trackpad: SYNA329A
 * Touchpad: ELAN2514
 
-> I created the EFI based on the EFI provided by jessi-mj on ![olarila](https://www.olarila.com/topic/6636-mojave-10145-on-hp-spectre-x360-with-i7-8565u/) and instructions from Kusaanko on ![tonymacx86](https://www.tonymacx86.com/threads/guide-hp-spectre-x360-13-ap0037tu-late-2018.295518/).
+> I created the EFI based on the EFI provided by jessi-mj on [olarila](https://www.olarila.com/topic/6636-mojave-10145-on-hp-spectre-x360-with-i7-8565u/) and instructions from Kusaanko on [tonymacx86](https://www.tonymacx86.com/threads/guide-hp-spectre-x360-13-ap0037tu-late-2018.295518/).
 > Thanks for their working !!
 
 For more details in creating the EFI, following the link above.
