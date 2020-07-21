@@ -1,4 +1,4 @@
-# Hackintosh Clover EFI for HP Spectre X360 13 late 2018
+# Hackintosh Clover EFI for HP Spectre X360 13 late 2018 (Chinese Model)
 
 * CPU: Core ™ i7-8565U
 * iGPU: Intel Graphics UHD 620
@@ -14,6 +14,8 @@
 > Thanks for their working !!
 
 For more details in creating the EFI, following the link above.
+
+> For different model, please follow [tonymacx86](https://www.tonymacx86.com/threads/guide-hp-spectre-x360-13-ap0037tu-late-2018.295518/) to generate your own DSDT.aml, apply patches and put it back to EFI.
 
 ### What works?
 Keyboard
