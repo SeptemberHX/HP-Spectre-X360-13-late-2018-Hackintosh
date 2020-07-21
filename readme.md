@@ -44,3 +44,7 @@ Fingerprint authentication sensor
 Camera (it may be used with some software because it is recognized as a USB camera)
 iMessage
 FaceTime
+
+------
+
+The touchpad seems not work sometimes, just update VoodooI2C to the latest version with Hackintool. That should work.
