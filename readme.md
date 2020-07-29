@@ -54,3 +54,148 @@ For more details in creating the EFI, following the link above.
 ------
 
 The touchpad seems not work during installing. It should work after rebooting into system.
+
+------
+
+以下是从 [tonymacx86](https://www.tonymacx86.com/threads/guide-hp-spectre-x360-13-ap0037tu-late-2018.295518/) 引用来的 DSDT 补丁方法，方便查找和操作：
+
+分别打上三个补丁：
+* [bat]HP_Spectre_x360_apxxxx.txt
+* [I2C]HP_Spectre_x360_apxxxx.txt
+* [brightness_key]HP_Spectre_x360_apxxxx.txt
+
+然后 DSDT 里搜索 `PS2K`，并将 `PS2K {......}` 替换为以下内容：
+```
+                Device (PS2K) //Keyboard
+                {
+                    Name (_HID, EisaId ("PNP0303"))
+                    Name (_CID, EisaId ("PNP030B"))
+                    Method (_STA, 0, NotSerialized)
+                    {
+                        If (And (IOST, 0x0400))
+                        {
+                            Return (0x0F)
+                        }
+                        Else
+                        {
+                            Return (Zero)
+                        }
+                    }
+                    Name (_CRS, ResourceTemplate ()
+                    {
+                        IO (Decode16,
+                            0x0060,             // Range Minimum
+                            0x0060,             // Range Maximum
+                            0x00,               // Alignment
+                            0x01,               // Length
+                            )
+                        IO (Decode16,
+                            0x0064,             // Range Minimum
+                            0x0064,             // Range Maximum
+                            0x00,               // Alignment
+                            0x01,               // Length
+                            )
+                        IRQNoFlags ()
+                            {1}
+                    })
+                    Name (_PRS, ResourceTemplate ()
+                    {
+                        StartDependentFn (0x00, 0x00)
+                        {
+                            FixedIO (
+                                0x0060,             // Address
+                                0x01,               // Length
+                                )
+                            FixedIO (
+                                0x0064,             // Address
+                                0x01,               // Length
+                                )
+                            IRQNoFlags ()
+                                {1}
+                        }
+                        EndDependentFn ()
+                    })
+                    Method (_PSW, 1, NotSerialized)
+                    {
+                        Store (Arg0, KBFG)
+                    }
+                }
+                Scope (\)
+                {
+                    Name (KBFG, Zero)
+                }
+                Method (PS2K._PRW, 0, NotSerialized)
+                {
+                    Return (GPRW (0x1D, 0x04))
+                }
+                Device (PS2M) //Mouse
+                {
+                    Name (_HID, EisaId ("PNP0F03"))
+                    Name (_CID, EisaId ("PNP0F13"))
+                    Method (_STA, 0, NotSerialized)
+                    {
+                        If (And (IOST, 0x4000))
+                        {
+                            Return (0x0F)
+                        }
+                        Else
+                        {
+                            Return (Zero)
+                        }
+                    }
+                    Name (CRS1, ResourceTemplate ()
+                    {
+                        IRQNoFlags ()
+                            {12}
+                    })
+                    Name (CRS2, ResourceTemplate ()
+                    {
+                        IO (Decode16,
+                            0x0060,             // Range Minimum
+                            0x0060,             // Range Maximum
+                            0x00,               // Alignment
+                            0x01,               // Length
+                            )
+                        IO (Decode16,
+                            0x0064,             // Range Minimum
+                            0x0064,             // Range Maximum
+                            0x00,               // Alignment
+                            0x01,               // Length
+                            )
+                        IRQNoFlags ()
+                            {12}
+                    })
+                    Method (_CRS, 0, NotSerialized)
+                    {
+                        If (And (IOST, 0x0400))
+                        {
+                            Return (CRS1)
+                        }
+                        Else
+                        {
+                            Return (CRS2)
+                        }
+                    }
+                    Name (_PRS, ResourceTemplate ()
+                    {
+                        StartDependentFn (0x00, 0x00)
+                        {
+                            IRQNoFlags ()
+                                {12}
+                        }
+                        EndDependentFn ()
+                    })
+                    Method (_PSW, 1, NotSerialized)
+                    {
+                        Store (Arg0, MSFG)
+                    }
+                }
+                Scope (\)
+                {
+                    Name (MSFG, Zero)
+                }
+                Method (PS2M._PRW, 0, NotSerialized)
+                {
+                    Return (GPRW (0x1D, 0x04))
+                }
+```
