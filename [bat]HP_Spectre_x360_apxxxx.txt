@@ -1,0 +1,66 @@
+#HP Spectre x360 apxxxx (Late 2018) Japanese Model
+#Battery status patch
+
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+end;
+
+into device label EC0 code_regex SMD0,\s+256, replace_matched begin SD00,8,SD01,8,SD02,8,SD03,8,SD04,8,SD05,8,SD06,8,SD07,8,SD08,8,SD09,8,SD0A,8,SD0B,8,SD0C,8,SD0D,8,SD0E,8,SD0F,8,SD10,8,SD11,8,SD12,8,SD13,8,SD14,8,SD15,8,SD16,8,SD17,8,SD18,8,SD19,8,SD1A,8,SD1B,8,SD1C,8,SD1D,8,SD1E,8,SD1F,8, end;
+into device label EC0 code_regex BADC,\s+16, replace_matched begin ADC0,8,ADC1,8, end;
+into device label EC0 code_regex BFCC,\s+16, replace_matched begin FCC0,8,FCC1,8, end;
+into device label EC0 code_regex MCUR,\s+16, replace_matched begin CUR0,8,CUR1,8, end;
+into device label EC0 code_regex MBRM,\s+16, replace_matched begin BRM0,8,BRM1,8, end;
+into device label EC0 code_regex MBCV,\s+16, replace_matched begin BCV0,8,BCV1,8, end;
+
+into_all method label UPBI code_regex \^\^PCI0.LPCB.EC0.BADC replaceall_matched begin B1B2(^^PCI0.LPCB.EC0.ADC0,^^PCI0.LPCB.EC0.ADC1) end;
+into_all method label UPBI code_regex \^\^PCI0.LPCB.EC0.BFCC replaceall_matched begin B1B2(^^PCI0.LPCB.EC0.FCC0,^^PCI0.LPCB.EC0.FCC1) end;
+into_all method label GBIF code_regex \^\^PCI0.LPCB.EC0.BFCC replaceall_matched begin B1B2(^^PCI0.LPCB.EC0.FCC0,^^PCI0.LPCB.EC0.FCC1) end;
+into_all method label UPBS code_regex \^\^PCI0.LPCB.EC0.MCUR replaceall_matched begin B1B2(^^PCI0.LPCB.EC0.CUR0,^^PCI0.LPCB.EC0.CUR1) end;
+into_all method label GBCO code_regex \^\^PCI0.LPCB.EC0.MCUR replaceall_matched begin B1B2(^^PCI0.LPCB.EC0.CUR0,^^PCI0.LPCB.EC0.CUR1) end;
+into_all method label UPBS code_regex \^\^PCI0.LPCB.EC0.MBRM replaceall_matched begin B1B2(^^PCI0.LPCB.EC0.BRM0,^^PCI0.LPCB.EC0.BRM1) end;
+into_all method label UPBS code_regex \^\^PCI0.LPCB.EC0.MBCV replaceall_matched begin B1B2(^^PCI0.LPCB.EC0.BCV0,^^PCI0.LPCB.EC0.BCV1) end;
+into_all method label SMWR code_regex SMD0\s+=\s+Arg3 replaceall_matched begin WSMD(Arg3) end;
+
+into method label WSMD parent_label EC0 remove_entry;
+into device label EC0 insert
+begin
+Method (WSMD, 1, NotSerialized)\n
+{\n
+    Name (TEMP, Buffer (0x20){})
+    TEMP = Arg0
+    SD00 = DerefOf (TEMP [Zero])
+    SD01 = DerefOf (TEMP [One])
+    SD02 = DerefOf (TEMP [0x02])
+    SD03 = DerefOf (TEMP [0x03])
+    SD04 = DerefOf (TEMP [0x04])
+    SD05 = DerefOf (TEMP [0x05])
+    SD06 = DerefOf (TEMP [0x06])
+    SD07 = DerefOf (TEMP [0x07])
+    SD08 = DerefOf (TEMP [0x08])
+    SD09 = DerefOf (TEMP [0x09])
+    SD0A = DerefOf (TEMP [0x0A])
+    SD0B = DerefOf (TEMP [0x0B])
+    SD0C = DerefOf (TEMP [0x0C])
+    SD0D = DerefOf (TEMP [0x0D])
+    SD0E = DerefOf (TEMP [0x0E])
+    SD0F = DerefOf (TEMP [0x0F])
+    SD10 = DerefOf (TEMP [0x10])
+    SD11 = DerefOf (TEMP [0x11])
+    SD12 = DerefOf (TEMP [0x12])
+    SD13 = DerefOf (TEMP [0x13])
+    SD14 = DerefOf (TEMP [0x14])
+    SD15 = DerefOf (TEMP [0x15])
+    SD16 = DerefOf (TEMP [0x16])
+    SD17 = DerefOf (TEMP [0x17])
+    SD18 = DerefOf (TEMP [0x18])
+    SD19 = DerefOf (TEMP [0x19])
+    SD1A = DerefOf (TEMP [0x1A])
+    SD1B = DerefOf (TEMP [0x1B])
+    SD1C = DerefOf (TEMP [0x1C])
+    SD1D = DerefOf (TEMP [0x1D])
+    SD1E = DerefOf (TEMP [0x1E])
+    SD1F = DerefOf (TEMP [0x1F])
+}\n
+end;
