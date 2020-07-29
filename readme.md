@@ -59,6 +59,8 @@ The touchpad seems not work during installing. It should work after rebooting in
 
 以下是从 [tonymacx86](https://www.tonymacx86.com/threads/guide-hp-spectre-x360-13-ap0037tu-late-2018.295518/) 引用来的 DSDT 补丁方法，方便查找和操作：
 
+**提取自己电脑的 DSDT 文件，这个很重要，我身边的两台同型号，同配置的电脑，出现了 DSDT 不一致导致的无法正常引导的情况。**
+
 分别打上三个补丁：
 * [bat]HP_Spectre_x360_apxxxx.txt
 * [I2C]HP_Spectre_x360_apxxxx.txt
