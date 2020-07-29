@@ -1,5 +1,7 @@
 # Hackintosh Clover EFI for HP Spectre X360 13 late 2018 (Chinese Model)
 
+我使用的 macOS 版本：10.15.5 和 10.15.6
+
 * CPU: Core ™ i7-8565U
 * iGPU: Intel Graphics UHD 620
 * RAM: 16GB
@@ -43,11 +45,11 @@ For more details in creating the EFI, following the link above.
 * macOS update
 
 ### What doesn't work?
-Bluetooth(It can connect but cannot communicate.)我试了，好使，不过不是特别稳定
-Fingerprint authentication sensor
-Camera (it may be used with some software because it is recognized as a USB camera) 微信视频貌似都正常
-iMessage
-FaceTime
+* Bluetooth(It can connect but cannot communicate.)我试了，好使，不过不是特别稳定
+* Fingerprint authentication sensor
+* Camera (it may be used with some software because it is recognized as a USB camera) 微信视频貌似都正常
+* iMessage
+* FaceTime
 
 ------
 
