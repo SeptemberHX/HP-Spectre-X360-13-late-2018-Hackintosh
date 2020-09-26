@@ -1,6 +1,6 @@
 # Hackintosh Clover EFI for HP Spectre X360 13 late 2018 (Chinese Model)
 
-我使用的 macOS 版本：10.15.5 和 10.15.6
+我使用的 macOS 版本：10.15.5, 10.15.6, 10.15.7
 
 * CPU: Core ™ i7-8565U
 * iGPU: Intel Graphics UHD 620
@@ -53,7 +53,7 @@ For more details in creating the EFI, following the link above.
 
 ------
 
-The touchpad seems not work during installing. It should work after rebooting into system.
+The touchpad seems not work during installing. It should work after rebooting into system. Also trying to rebuild the kext caches with **hackintool**
 
 ------
 
