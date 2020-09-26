@@ -55,6 +55,8 @@ For more details in creating the EFI, following the link above.
 
 The touchpad seems not work during installing. It should work after rebooting into system. Also trying to rebuild the kext caches with **hackintool**
 
+WIFI 和 蓝牙可正常驱动；想使用随航功能（部分功能，比如剪贴板共享，打开其他设备上打开的窗口，其余功能等待 itlwm 支持），需要删除 itlwm.kext，前往 [Releases](https://github.com/OpenIntelWireless/itlwm/releases) 下载 AirportItlwm，然后将其解压放到 /Library/Extensions
+
 ------
 
 以下是从 [tonymacx86](https://www.tonymacx86.com/threads/guide-hp-spectre-x360-13-ap0037tu-late-2018.295518/) 引用来的 DSDT 补丁方法，方便查找和操作：
