@@ -1,5 +1,7 @@
 # Hackintosh Clover EFI for HP Spectre X360 13 late 2018 (Chinese Model)
 
+推荐使用 https://github.com/jpuxdev/HP-Spectre-X360-13-Early-2019-Hackintosh 作为本仓库的替代
+
 我使用的 macOS 版本：10.15.5, 10.15.6, 10.15.7
 
 * CPU: Core ™ i7-8565U
