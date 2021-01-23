@@ -1,6 +1,8 @@
 # Hackintosh Clover EFI for HP Spectre X360 13 late 2018 (Chinese Model)
 
-推荐使用 https://github.com/jpuxdev/HP-Spectre-X360-13-Early-2019-Hackintosh 作为本仓库的替代
+推荐使用 https://github.com/jpuxdev/HP-Spectre-X360-13-Early-2019-Hackintosh 作为本仓库的替代，当前仓库为个人使用的EFI备份。
+
+Please use  https://github.com/jpuxdev/HP-Spectre-X360-13-Early-2019-Hackintosh ! This repo is used as my personal EFI backup now.
 
 我使用的 macOS 版本：10.15.5, 10.15.6, 10.15.7
 
