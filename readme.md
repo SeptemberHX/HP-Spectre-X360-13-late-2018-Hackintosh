@@ -1,6 +1,8 @@
 # Hackintosh Clover EFI for HP Spectre X360 13 late 2018 (Chinese Model)
 
-我使用的 macOS 版本：10.15.5 和 10.15.6
+推荐使用 https://github.com/jpuxdev/HP-Spectre-X360-13-Early-2019-Hackintosh 作为本仓库的替代
+
+我使用的 macOS 版本：10.15.5, 10.15.6, 10.15.7
 
 * CPU: Core ™ i7-8565U
 * iGPU: Intel Graphics UHD 620
@@ -53,7 +55,10 @@ For more details in creating the EFI, following the link above.
 
 ------
 
-The touchpad seems not work during installing sometimes. If so, reset your nvram and rebuild kext cache should work.
+The touchpad seems not work during installing. It should work after rebooting into system. Also trying to rebuild the kext caches with **hackintool**
+
+WIFI 和 蓝牙可正常驱动；想使用随航功能（部分功能，比如剪贴板共享，打开其他设备上打开的窗口，其余功能等待 itlwm 支持），需要删除 itlwm.kext，前往 [Releases](https://github.com/OpenIntelWireless/itlwm/releases) 下载 AirportItlwm，然后将其解压放到 /Library/Extensions
+>>>>>>> e86deba30b597d878c919f02d30d66fc70b78fab
 
 ------
 
