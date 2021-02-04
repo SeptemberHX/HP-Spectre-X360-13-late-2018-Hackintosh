@@ -6,13 +6,12 @@
 
 Two Versions:
 * Catalina Clover：based on clover，supports macOS Catalina 10.15.7
-* Big Sur Opencore：based on opencore，supports macOS Big Sur 11.2. Touchpad doesn't work, and the internal 4k screen only works at 40hz
+* Big Sur Opencore：based on opencore，supports macOS Big Sur 11.2. **The internal 4k screen only works at 40hz**
 
 
 ------
 
-以下是从 [tonymacx86](https://www.tonymacx86.com/threads/guide-hp-spectre-x360-13-ap0037tu-late-2018.295518/) 引用来的 DSDT 补丁方法，方便查找和操作：
+Patch your DSDT as shown in [tonymacx86](https://www.tonymacx86.com/threads/guide-hp-spectre-x360-13-ap0037tu-late-2018.295518/):
 
-**提取自己电脑的 DSDT 文件，这个很重要，我身边的两台同型号，同配置的电脑，出现了 DSDT 不一致导致的无法正常引导的情况。**
-
-* [bat]HP_Spectre_x360_apxxxx.txt
+* [bat]HP_Spectre_x360_apxxxx.txt ( Catalina Clover + Big Sur Opencore)
+* [I2C]HP_Spectre_x360_apxxxx.txt ( Big Sur Opencore ONLY ) ==> This will fix your trackpad with opencore. Not needed with clover
