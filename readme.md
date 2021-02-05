@@ -14,7 +14,9 @@ Two Versions:
   * **The external 4k screen may not works at 60hz with unusable flash**
   * Not sure whether others will meet this or not: After copying the EFI to internal SSD EFI partition, it will stuck at [EB|#LOG:EXITBS:START]. However, it works fine if booting from USB EFI partition.
   
-> **For Big Sur**: When you boot the system with an external monitor, the internal 4k screen doesn't look like 60hz -- It may behave like around 40hz(Though the system reports as 60hz screen). It could be solved by booting without external monitor or re-pluging the external monitor. When you unplug the external screen for the first time after booting, the internal screen may turn into black. You should close the lid and unplug the external screen after the internal screen stops working. Then open the lid, and the internal screen should work fine. The operation is only needed for the first time, unless you reboot the system.
+> **For Big Sur**: When you boot the system with an external monitor, the internal 4k screen doesn't look like 60hz -- It may behave like around 40hz(Though the system reports as 60hz screen). It could be solved by booting without external monitor or re-pluging the external monitor.
+
+> **For Big Sur**: When you unplug the external screen for the first time after booting, the internal screen may turn into black. You should close the lid and unplug the external screen after the internal screen stops working. Then open the lid, and the internal screen should work fine. The operation is only needed for the first time, unless you reboot the system.
 
 
 ------
