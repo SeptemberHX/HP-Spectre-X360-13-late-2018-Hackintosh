@@ -1,5 +1,7 @@
 # Hackintosh for HP Spectre-X360-13 late 2018
 
+Please check https://github.com/jpuxdev/HP-Spectre-X360-13-Early-2019-Hackintosh first ! This repo learns a lot from it.
+
 两个版本：
 * Catalina Clover：基于 clover，支持 macOS 10.15.7 基本完美
 * Big Sur Opencore：基于 opencore，支持 Big Sur 11.2，4k 外接屏 60hz 可能无法使用
