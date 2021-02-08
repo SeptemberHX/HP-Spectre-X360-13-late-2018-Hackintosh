@@ -48,10 +48,12 @@ My radical parameters: `sudo ./voltageshift --damage offset -120 -500 -120`, and
 
 ### More thoughts about the performance
 
-There are still more problems with the performance, especially when using an application consuming GPU heavily(Games). Though undervoltage could alleviate it, 800mhz CPU still occurs when CPU package power meets 15w more than 20 seconds(Games again). I guess 15w is the main reason since it works well before CPU package power drops below 15w (only for several seconds), and CPU frequency drops after CPU package power is limited below 15w. So I think 20w TDP could solve this problem.
+There are still more problems with the performance, especially when using an application consuming GPU heavily(Games). Though undervoltage could alleviate it, 800mhz CPU still occurs when CPU package power meets 15w more than 20 seconds(Games again. I even cannot play MTGA smoothly). I guess 15w is the main reason since it works well before CPU package power drops below 15w (only for several seconds), and CPU frequency drops after CPU package power is limited below 15w. So I think 20w TDP could solve this problem.
 
 However, I have noticed that the TDP is 15w even if the PL1/PL2 are set to 20w/30w (PL1/PL2 are the default values). 
 
 When in windows, the TDP are set to 20w on performance mode and 7w on cooling mode (HP Command Center does the trick, and all the values could be seen in XTU) while the PL1/PL2 keep 20w/30w.
 
 I guess if we want to improve the performance, we need to figure out how the HP Command Center works :)
+
+Please help if you have any ideas or solutions :)
