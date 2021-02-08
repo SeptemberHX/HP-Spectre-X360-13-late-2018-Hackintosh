@@ -42,4 +42,4 @@ According to my insufficient test, `sudo ./voltageshift --damage offset -100 -10
 
 My radical parameters: `sudo ./voltageshift --damage offset -120 -500 -120`, and the GeekBench5 score below:
 
-<img src="./Screenshot/geekbench5_result.png" width="200" alt="my_geekbench5"/><br/>
+<img src="./Screenshot/geekbench5_result.png" width="500" alt="my_geekbench5"/><br/>
