@@ -39,3 +39,7 @@ According to my insufficient test, `sudo ./voltageshift --damage offset -100 -10
 * After voltageshfit, GeekBench5 gives me about 900-1000 single core, 3300~3400 multi-core; CPU works normally when opening Epic Game Launcher
 
 > Please spend more time on adjusting the parameters ! It is important to make sure the values cannot give you an unstable system :)
+
+My radical parameters: `sudo ./voltageshift --damage offset -120 -500 -120`, and the GeekBench5 score below:
+
+<img src="./Screenshot/geekbench5_result.png" width="200" alt="my_geekbench5"/><br/>
