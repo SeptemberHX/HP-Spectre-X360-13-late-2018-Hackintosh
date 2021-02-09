@@ -72,8 +72,10 @@ sudo ./voltageshift write 0x610 0x42814000dd80c8         # set LP1/LP2 to 25w/40
 sudo ./voltageshift wrmem 0xfed159a0 0x42814000dd80c8    # set 25w/40w in MCHBAR    However, I don't want to do the calculation to get he HEX values :)
 ```
 
+**Need to be executed after each booting**
+
 Actually this cannot improve the CPU performance. Geekbench 5 doesn't give better results. However, it could solve <1000mhz CPU frequency when playing games (or other heavy gpu usage applications) :)
 
 Then Intel Power Gadget as below:
 
-<img src="./Screenshot/intel_power_gadget.png" width="800" alt="intel_power_gadget.png"/><br/>
+<img src="./Screenshot/intel_power_gadget.png" width="400" alt="intel_power_gadget.png"/><br/>
