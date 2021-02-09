@@ -78,6 +78,8 @@ sudo ./voltageshift wrmem 0xfed159a0 0x42814000dd80c8    # set 25w/40w in MCHBAR
 
 Actually this cannot improve the CPU performance. Geekbench 5 doesn't give better results. However, it could solve <1000mhz CPU frequency when playing games (or other heavy gpu usage applications) :)
 
+> You can use `boost.sh` to improve the performance
+
 Then Intel Power Gadget as below:
 
 <img src="./Screenshot/intel_power_gadget.png" width="400" alt="intel_power_gadget.png"/><br/>
