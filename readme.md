@@ -56,4 +56,22 @@ When in windows, the TDP are set to 20w on performance mode and 7w on cooling mo
 
 I guess if we want to improve the performance, we need to figure out how the HP Command Center works :)
 
-Please help if you have any ideas or solutions :)
+-----
+
+### For 20w TDP
+
+I have patched the latest version voltageshift: https://github.com/SeptemberHX/VoltageShift/releases
+
+According to https://github.com/buliaoyin/VoltageShift , `rdmem` and `wrmem` are implemented which means we can change **MCHBAR** values to reach 20w TDP.
+
+Below is my choice:
+
+```shell
+sudo ./voltageshift --damage offset -115 -200 -115       # undervoltage
+sudo ./voltageshift write 0x610 0x42814000dd80c8         # set LP1/LP2 to 25w/40w.  Actuallly 20w/30w are enough since TDP will never exceed 20w
+sudo ./voltageshift wrmem 0xfed159a0 0x42814000dd80c8    # set 25w/40w in MCHBAR    However, I don't want to do the calculation to get he HEX values :)
+```
+
+Then Intel Power Gadget as below:
+
+<img src="./Screenshot/intel_power_gadget.png" width="800" alt="intel_power_gadget.png"/><br/>
