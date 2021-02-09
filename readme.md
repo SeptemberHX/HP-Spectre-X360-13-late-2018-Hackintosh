@@ -62,6 +62,8 @@ I guess if we want to improve the performance, we need to figure out how the HP 
 
 I have patched the latest version voltageshift: https://github.com/SeptemberHX/VoltageShift/releases
 
+> make sure `sudo chown -R root:wheel VoltageShift.kext` after downloading the binary files
+
 According to https://github.com/buliaoyin/VoltageShift , `rdmem` and `wrmem` are implemented which means we can change **MCHBAR** values to reach 20w TDP.
 
 Below is my choice:
