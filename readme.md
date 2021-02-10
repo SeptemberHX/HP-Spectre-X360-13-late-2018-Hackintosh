@@ -85,3 +85,14 @@ Actually this cannot improve the CPU performance. Geekbench 5 doesn't give bette
 Then Intel Power Gadget as below:
 
 <img src="./Screenshot/intel_power_gadget.png" width="400" alt="intel_power_gadget.png"/><br/>
+
+### References
+
+* https://github.com/erpalma/throttled for relaxing tdp on Linux which lets me know it is possible to do that on macOS
+* https://github.com/sicreative/VoltageShift for undervoltage tools
+* https://github.com/buliaoyin/VoltageShift for changing values in MCHBAR
+* https://github.com/daliansky/XiaoMi-Pro-Hackintosh/issues/174 for more details about the tdp and 800mhz cpu frequency
+* https://github.com/jpuxdev/HP-Spectre-X360-13-Early-2019-Hackintosh for Big Sur compatibility
+* https://www.tonymacx86.com/threads/guide-hp-spectre-x360-13-ap0037tu-late-2018.295518 for Opencore guide
+
+
