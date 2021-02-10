@@ -42,7 +42,7 @@ According to my insufficient test, `sudo ./voltageshift --damage offset -100 -10
 
 > Please spend more time on adjusting the parameters ! It is important to make sure the values cannot give you an unstable system :)
 
-My radical parameters: `sudo ./voltageshift --damage offset -120 -500 -120`, and the GeekBench5 score below:
+My radical parameters: `sudo ./voltageshift --damage offset -100 -200 -100`, and the GeekBench5 score below:
 
 <img src="./Screenshot/geekbench5_result.png" width="800" alt="my_geekbench5"/><br/>
 
