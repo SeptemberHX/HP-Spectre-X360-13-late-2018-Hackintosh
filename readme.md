@@ -35,7 +35,7 @@ Patch your DSDT as shown in [tonymacx86](https://www.tonymacx86.com/threads/guid
 
 You could notice your CPU frequency drops to 600mhz when using an application that consumes GPU heavily (such as Epic Game Launcher), or you get lower mark with GeekBench5 when comparing to Windows 10. Then [voltageshfit](https://github.com/sicreative/VoltageShift) is all your need !
 
-According to my insufficient test, `sudo ./voltageshift --damage offset -100 -100 -100` works good ! (CPU, GPU, and CPU Cache). It is possible to set CPU and CPU Cache to -125, but the computer has the risk of overheating shutdown since the fan cannot work at full speed in time.
+According to my insufficient test, `sudo ./voltageshift --damage offset -80 -500 -80` works good ! (CPU, GPU, and CPU Cache). It is possible to set CPU and CPU Cache to -125, but the computer has the risk of overheating shutdown since the fan cannot work at full speed in time.
 
 * Before voltageshfit, GeekBench5 gives me about 900~1000 single core, 2900~3000 multi-core; CPU runs at 600mhz when opening Epic Game Launcher
 * After voltageshfit, GeekBench5 gives me about 900-1000 single core, 3300~3400 multi-core; CPU works normally when opening Epic Game Launcher
