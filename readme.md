@@ -1,5 +1,7 @@
 # Hackintosh for HP Spectre-X360-13 late 2018
 
+> No further update ! Currently Big Sur is good enough for daily usage.
+
 Please check https://github.com/jpuxdev/HP-Spectre-X360-13-Early-2019-Hackintosh and [tonymacx86](https://www.tonymacx86.com/threads/guide-hp-spectre-x360-13-ap0037tu-late-2018.295518/) first ! This repo learns a lot from them.
 
 > If your trackpad doesn't work suddenly, hit `prt sc` key may help
